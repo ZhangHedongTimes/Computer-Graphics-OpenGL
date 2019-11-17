@@ -1,0 +1,13 @@
+cmake_minimum_required(VERSION 2.6)
+
+add_subdirectory(chapter_3)
+add_subdirectory(chapter_4)
+add_subdirectory(chapter_5)
+add_subdirectory(chapter_6)
+#add_subdirectory(chapter_7)
+#add_subdirectory(chapter_8)
+#add_subdirectory(chapter_9)
+#add_subdirectory(chapter_10)
+#add_subdirectory(chapter_11)
+#add_subdirectory(chapter_12)
+#add_subdirectory(chapter_13)
