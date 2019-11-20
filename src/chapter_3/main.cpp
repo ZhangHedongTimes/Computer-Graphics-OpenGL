@@ -68,8 +68,8 @@ int main(int argc,char** argv)
 	glutCreateWindow("An Example OpenGL Program");//创建窗口并命名
 
 	init();//初始设置，绘制形式、背景的设置
-	//glutDisplayFunc(lineSegment);//绘制函数设置
-	glutDisplayFunc(drawPoints);
+	glutDisplayFunc(lineSegment);//绘制函数设置
+	//glutDisplayFunc(drawPoints);
 	glutMainLoop();
 //	cout << " OKKO\n";
 	return 0;
