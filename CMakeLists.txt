@@ -39,15 +39,15 @@ set(CMAKE_EXE_LINKER_FLAGS "${CMAKE_EXE_LINKER_FLAGS} /SAFESEH:NO")#命令行设
 
 set(USE_EIGEN        ON)
 
-message(STATUS "------------------------------------")
-message(STATUS "| USE_EIGEN       " ${USE_EIGEN})
-message(STATUS "------------------------------------")
-
-
-if (USE_EIGEN)
-    find_package(Eigen3 REQUIRED)#自动查找库
-    include_directories(${EIGEN3_INCLUDE_DIR})
-    message(STATUS "found Eigen " ${EIGEN3_VERSION_STRING} " for project")
-endif ()
+#message(STATUS "------------------------------------")
+#message(STATUS "| USE_EIGEN       " ${USE_EIGEN})
+#message(STATUS "------------------------------------")
+#
+#
+#if (USE_EIGEN)
+#    find_package(Eigen3 REQUIRED)#自动查找库
+#    include_directories(${EIGEN3_INCLUDE_DIR})
+#    message(STATUS "found Eigen " ${EIGEN3_VERSION_STRING} " for project")
+#endif ()
 
 add_subdirectory(src)#添加子目录
