@@ -14,9 +14,9 @@ GLint dataValue[12] = { 420,342,324,310,262,185,190,196,217,240,312,438 };
 
 void init()
 {
-	glClearColor(1.0, 1.0, 1.0, 1.0);//���ó�ʼ������ɫ
-	glMatrixMode(GL_PROJECTION);//����ǰ����ָ��ΪͶӰ����
-	gluOrtho2D(0.0, 600.0, 0.0, 500.0);////left right,buttom,up (left,buttom),(right,up) ��Ұ��Χ
+	glClearColor(1.0, 1.0, 1.0, 1.0);//设置初始窗口颜色
+	glMatrixMode(GL_PROJECTION);//将当前矩阵指定为投影矩阵
+	gluOrtho2D(0.0, 600.0, 0.0, 500.0);////left right,buttom,up (left,buttom),(right,up) 视野范围
 }
 void lineGraph()
 {
@@ -189,7 +189,7 @@ static void hex_init()
 	GLdouble theta;
 	GLint k;
 	circCtr.setCoords(winWidth / 2, winHeight / 2);
-	glClearColor(1.0, 1.0, 1.0, 0.0);//���ó�ʼ������ɫ
+	glClearColor(1.0, 1.0, 1.0, 0.0);//设置初始窗口颜色
 	regHex = glGenLists(1);
 	glNewList(regHex, GL_COMPILE);
 	glColor3f(1.0, 0.0, 0.0);
@@ -223,9 +223,9 @@ void runPieGraph_LineGraph(int argc, char** argv)
 {
 	glutInit(&argc, argv);
 	glutInitDisplayMode(GLUT_SINGLE | GLUT_RGB);
-	glutInitWindowPosition(350, 300);//���ô���λ��
-	glutInitWindowSize(winWidth, winHeight);//���ô��ڴ�С
-	glutCreateWindow("An Example OpenGL Program");//�������ڲ�����
+	glutInitWindowPosition(350, 300);//设置窗口位置
+	glutInitWindowSize(winWidth, winHeight);//设置窗口大小
+	glutCreateWindow("An Example OpenGL Program");//创建窗口并命名
 	
 	init();
 #if 1
@@ -242,9 +242,9 @@ void runDrawHexDisplayList(int argc, char** argv)
 {
 	glutInit(&argc, argv);
 	glutInitDisplayMode(GLUT_SINGLE | GLUT_RGB);
-	glutInitWindowPosition(100, 100);//���ô���λ��
-	glutInitWindowSize(winWidth, winHeight);//���ô��ڴ�С
-	glutCreateWindow("Reshape & Display-List");//�������ڲ�����
+	glutInitWindowPosition(100, 100);//设置窗口位置
+	glutInitWindowSize(winWidth, winHeight);//设置窗口大小
+	glutCreateWindow("Reshape & Display-List");//创建窗口并命名
 
 	hex_init();
 	glutDisplayFunc(regHexagon);
