@@ -4,7 +4,7 @@ cmake_minimum_required(VERSION 2.6)
 set(HEADFILE ${HEADER_PATH}/OpenGLBase.h)
 set(SRCFILE OpenGLBase.cpp)
 
-add_library(OpenGLBase STATIC  ${HEADFILE}  ${SRCFILE})#���ɿ�
+add_library(OpenGLBase STATIC  ${HEADFILE}  ${SRCFILE})#构建静态库
 
 
 set(SRCFILE main.cpp)
