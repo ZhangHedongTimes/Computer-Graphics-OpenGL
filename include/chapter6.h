@@ -2,6 +2,7 @@
 #define CHAPTER6_H
 #include"OpenGLBase.h"
 #include<vector>
+#include <cmath>
 
 class BasicGraphic:public OpenGLBase
 {
