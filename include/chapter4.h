@@ -9,14 +9,14 @@ const GLdouble Pi = 3.141592653;
 GLsizei winWidth = 600, winHeight = 500;
 GLuint regHex;
 GLint xRaster = 25, yRaster = 150;
-GLubyte lable[36] = { 'J','a','n','F','e','b','M','a','r','A','p','r','M','a','y','J','u','n','J','u','l','A','u','g','S','e','p','O','c','t','N','o','v','D','e','c ' };
+GLubyte lable[] = { 'J','a','n','F','e','b','M','a','r','A','p','r','M','a','y','J','u','n','J','u','l','A','u','g','S','e','p','O','c','t','N','o','v','D','e','c' };
 GLint dataValue[12] = { 420,342,324,310,262,185,190,196,217,240,312,438 };
 
 void init()
 {
-	glClearColor(1.0, 1.0, 1.0, 1.0);//ÉèÖÃ³õÊ¼´°¿ÚÑÕÉ«
-	glMatrixMode(GL_PROJECTION);//½«µ±Ç°¾ØÕóÖ¸¶¨ÎªÍ¶Ó°¾ØÕó
-	gluOrtho2D(0.0, 600.0, 0.0, 500.0);////left right,buttom,up (left,buttom),(right,up) ÊÓÒ°·¶Î§
+	glClearColor(1.0, 1.0, 1.0, 1.0);//è®¾ç½®åˆå§‹çª—å£é¢œè‰²
+	glMatrixMode(GL_PROJECTION);//å°†å½“å‰çŸ©é˜µæŒ‡å®šä¸ºæŠ•å½±çŸ©é˜µ
+	gluOrtho2D(0.0, 600.0, 0.0, 500.0);////left right,buttom,up (left,buttom),(right,up) è§†é‡èŒƒå›´
 }
 void lineGraph()
 {
@@ -189,7 +189,7 @@ static void hex_init()
 	GLdouble theta;
 	GLint k;
 	circCtr.setCoords(winWidth / 2, winHeight / 2);
-	glClearColor(1.0, 1.0, 1.0, 0.0);//ÉèÖÃ³õÊ¼´°¿ÚÑÕÉ«
+	glClearColor(1.0, 1.0, 1.0, 0.0);//è®¾ç½®åˆå§‹çª—å£é¢œè‰²
 	regHex = glGenLists(1);
 	glNewList(regHex, GL_COMPILE);
 	glColor3f(1.0, 0.0, 0.0);
@@ -223,9 +223,9 @@ void runPieGraph_LineGraph(int argc, char** argv)
 {
 	glutInit(&argc, argv);
 	glutInitDisplayMode(GLUT_SINGLE | GLUT_RGB);
-	glutInitWindowPosition(350, 300);//ÉèÖÃ´°¿ÚÎ»ÖÃ
-	glutInitWindowSize(winWidth, winHeight);//ÉèÖÃ´°¿Ú´óĞ¡
-	glutCreateWindow("An Example OpenGL Program");//´´½¨´°¿Ú²¢ÃüÃû
+	glutInitWindowPosition(350, 300);//è®¾ç½®çª—å£ä½ç½®
+	glutInitWindowSize(winWidth, winHeight);//è®¾ç½®çª—å£å¤§å°
+	glutCreateWindow("An Example OpenGL Program");//åˆ›å»ºçª—å£å¹¶å‘½å
 	
 	init();
 #if 1
@@ -242,9 +242,9 @@ void runDrawHexDisplayList(int argc, char** argv)
 {
 	glutInit(&argc, argv);
 	glutInitDisplayMode(GLUT_SINGLE | GLUT_RGB);
-	glutInitWindowPosition(100, 100);//ÉèÖÃ´°¿ÚÎ»ÖÃ
-	glutInitWindowSize(winWidth, winHeight);//ÉèÖÃ´°¿Ú´óĞ¡
-	glutCreateWindow("Reshape & Display-List");//´´½¨´°¿Ú²¢ÃüÃû
+	glutInitWindowPosition(100, 100);//è®¾ç½®çª—å£ä½ç½®
+	glutInitWindowSize(winWidth, winHeight);//è®¾ç½®çª—å£å¤§å°
+	glutCreateWindow("Reshape & Display-List");//åˆ›å»ºçª—å£å¹¶å‘½å
 
 	hex_init();
 	glutDisplayFunc(regHexagon);
