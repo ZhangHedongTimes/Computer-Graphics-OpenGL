@@ -8,7 +8,7 @@ add_library(OpenGLBase STATIC  ${HEADFILE}  ${SRCFILE})#Éú³É¿â
 
 
 set(SRCFILE main.cpp)
-add_executable(Chapter_5 ${SRCFILE})
+add_executable(Chapter_05 ${SRCFILE})
 
 
 

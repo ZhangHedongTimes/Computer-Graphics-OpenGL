@@ -42,6 +42,6 @@ int main(int argc, char** argv)
 	BasicGraphic bg;
 	bg.draw(argc,argv);
 	
-	\\
+	
 	return 0;
 }

@@ -4,6 +4,8 @@
 
 OpenGLBase::OpenGLBase()
 {
+	winHeight = 600;
+	winWidth = 800;
 }
 
 
@@ -16,7 +18,7 @@ void OpenGLBase::initOpenGL(int argc, char** argv)
 	glutInit(&argc, argv);
 	glutInitDisplayMode(GLUT_SINGLE | GLUT_RGB);
 	glutInitWindowPosition(350, 300);//设置窗口位置
-	glutInitWindowSize(800, 600);//设置窗口大小
+	glutInitWindowSize(winWidth, winHeight);//设置窗口大小
 	glutCreateWindow("An Example OpenGL Program");//创建窗口并命名
 
 }
@@ -30,4 +32,10 @@ void  OpenGLBase::init()
 void  OpenGLBase::resetOpenGL()
 {
 	glutSetWindowTitle("HHH");
+}
+
+void OpenGLBase::setWH(const GLint w, const GLint h)
+{
+	winHeight = h;
+	winWidth = w;
 }

@@ -4,5 +4,5 @@ cmake_minimum_required(VERSION 2.6)
 set(HEADFILE ${HEADER_PATH}/chapter4.h)
 
 set(SRCFILE main.cpp)
-add_executable(Chapter_4 ${HEADFILE} ${SRCFILE})
+add_executable(Chapter_04 ${HEADFILE} ${SRCFILE})
 
