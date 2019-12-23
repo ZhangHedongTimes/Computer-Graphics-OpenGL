@@ -36,6 +36,8 @@ void BasicGraphic::displayFunction()
 	}
 	glEnd();
 
+
+
 	//std::vector<Point2<int>> line_point_list = lineDDA(100, 100, 400, 400);
 	std::vector<Point2<int>> line_point_list = lineBresneham(100, 100, 400, 400);
 	glPointSize(4);

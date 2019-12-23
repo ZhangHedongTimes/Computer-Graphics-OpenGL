@@ -21,6 +21,7 @@ void Animation::init()
 	GLdouble hexTheta;
 	GLint k;
 	glClearColor(1.0, 1.0, 1.0, 0.0);//设置初始窗口颜色
+	gluOrtho2D(0.0, 800.0, 0.0, 800.0);////left right,buttom,up (left,buttom),(right,up) 视野范围
 	regHex = glGenLists(1);
 	glNewList(regHex, GL_COMPILE);
 	glColor3f(1.0, 0.0, 0.0);
@@ -28,8 +29,8 @@ void Animation::init()
 	for (k = 0; k < 6; k++)
 	{
 		hexTheta = TWO_PI * k / 6;
-		hexVertex.x = 150 + 100 * cos(hexTheta);
-		hexVertex.y = 150 + 100 * sin(hexTheta);
+		hexVertex.x = 350 + 100 * cos(hexTheta);
+		hexVertex.y = 350 + 100 * sin(hexTheta);
 		glVertex2i(hexVertex.x, hexVertex.y);
 	}
 	glEnd();
@@ -48,7 +49,7 @@ void Animation::resetOpenGL()
 void  Animation::rotateHex()
 {
 	rotTheta += 3.0;
-	if (rotTheta > 360.0)
+	while(rotTheta > 360.0)
 		rotTheta -= 360.0;
 	glutPostRedisplay();
 }
@@ -65,23 +66,23 @@ void Animation::mouseFcn(GLint button,GLint action,GLint x,GLint y)
 		if(action == GLUT_DOWN)
 			glutIdleFunc(NULL);
 		break;
-
 	default:
 		break;
 	}
+	printf("%d  %f\n", button, rotTheta);
 }
 
 void Animation::displayFunction()
 {
 	glClear(GL_COLOR_BUFFER_BIT);
-
 	glPushMatrix();
 	glRotatef(rotTheta, 0.0, 0.0, 1.0);
+
+
 	glCallList(regHex);
 	glPopMatrix();
 	glutSwapBuffers();
 	
-
 	glFlush();
 
 };
@@ -94,7 +95,6 @@ void Animation::draw(int argc, char** argv)
 	resetOpenGL();
 	glutDisplayFunc(this->displayFunction);//绘制函数设置
 	glutMouseFunc(this->mouseFcn);
-
 	glutMainLoop();
 }
 
